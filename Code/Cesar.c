@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "entetes.h"
 
 void chiffrerCesar(char txt[], int cle) {
     char alphaNum[] = "abcdefghijklmnopqrstuvwxyz0123456789";

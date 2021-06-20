@@ -25,7 +25,7 @@
 #include "entetes.h"
 #include "verifSyntaxe.c"
 #include "cesar.c"
-#include "Vigenere.c"
+#include "vigenere.c"
 
 #define TAILLE_SAISIE 100 //nombre de carractères max en entrée
 jmp_buf BUFA, BUFB;
