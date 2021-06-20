@@ -28,30 +28,52 @@
 #include "Vigenere.c"
 
 #define TAILLE_SAISIE 100 //nombre de carractères max en entrée
-jmp_buf BUFA;
+jmp_buf BUFA, BUFB;
 
 void main() {
 
-    //  Saisie du mot en clair
     setjmp(BUFA);
-    printf("Mot a coder : ");
+    printf("Quelle action effectuer ? (options: coderCesar, decoderCesar, coderVigenere, decoderVigenere) :\n");
+    char action[TAILLE_SAISIE]; //  Action à effectuer
+    scanf("%s", action);
+
+    //  Saisie du texte à coder ou décoder
+    setjmp(BUFB);
+    printf("Mot a coder ou decoder : ");
     char saisie[TAILLE_SAISIE];
     scanf("%s",saisie);
-    
     //  Vérification alphanumérique (pas de carractères spéciaux)
-    verifAlphanumerique(saisie, BUFA);
+    verifAlphanumerique(saisie, BUFB);
 
-    //  Chiffrement avec César et Vigenere, /!\ présence obligatoire d'une clé !
-    char cleV[TAILLE_SAISIE] = "cle"; // Clé pour Vigenere
-	int cleC = 3; // Clé pour César
-	chiffrerCesar(saisie, cleC);
-    printf("Chiffrement avec Cesar : %s\n", saisie);
-    chiffrerVigenere(saisie, cleV);
-    printf("Chiffrement avec Vigenere : %s\n", saisie);
-    //  Déchiffrement de Vigenere et Cesar, réutilisation des mêmes clés que pour chiffrer
-    dechiffrerVigenere(saisie, cleV);
-    printf("Dechiffrement de Vigenere : %s\n", saisie);
-	dechiffrerCesar(saisie, cleC);
-    printf("Dechiffrement de Cesar : %s\n", saisie);
+    int cleC;
+    char cleV[TAILLE_SAISIE];
+
+    if ( strcmp(action, "coderCesar") == 0 ) {
+        printf("Entrez la cle (entier) : ");
+        scanf("%d", cleC);
+        chiffrerCesar(saisie, cleC);
+        printf("Chiffrement avec Cesar : %s\n", saisie);
+
+    } else if ( strcmp(action, "decoderCesar") == 0 ) {
+        printf("Entrez la cle (entier) : ");
+        scanf("%d", cleC);
+        dechiffrerCesar(saisie, cleC);
+        printf("Dechiffrement avec Cesar : %s\n", saisie);
+
+    }else if ( strcmp(action, "coderVigenere") == 0 ) {
+        printf("Entrez la cle (chaine de carracteres) : ");
+        scanf("%s", cleV);
+        chiffrerVigenere(saisie, cleV);
+        printf("Chiffrement avec Vegenere : %s\n", saisie);
+
+    } else if ( strcmp(action, "decoderVigenere") == 0 ) {
+        printf("Entrez la cle (chaine de carracteres) : ");
+        scanf("%s", cleV);
+        dechiffrerVigenere(saisie, cleV);
+        printf("Dechiffrement avec Vegenere : %s\n", saisie);
+    } else {
+        printf("Action non definie demandee\n");
+        longjmp(BUFA, 2001);
+    }
 
 }

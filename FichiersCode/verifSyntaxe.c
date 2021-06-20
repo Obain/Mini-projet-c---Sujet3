@@ -12,7 +12,7 @@ void verifAlphanumerique(char txt[], jmp_buf BUF) {
         if (strchr(alphaMin, txt[i])==NULL && strchr(alphaMaj, txt[i])==NULL && strchr(num, txt[i])==NULL) {
             //  Msg d'erreur + retour à la saisie du mot à coder
             printf("Erreur : presence d'un ou plusieurs carracteres speciaux en entree.\n");
-            longjmp(BUF, 2000);
+            longjmp(BUF, 2002);
         }
     }
 }

@@ -5,7 +5,10 @@ CARABIN Kémit
 Groupe : S2A1
 
 Objectif de l'appli :
-	
+	L’application que nous avons développée porte sur le langage crypté. Elle se présente comme étant composée d’un ensemble de procédures 
+	qui ont pour rôle de coder et de déchiffrer une chaîne de caractère à l’aide de clés, ces derniers étant entrés par l’utilisateur de 
+	l’application. Pour ce faire, nous avons fait le choix de programmer des procédures basées sur les principes de chiffrement de César et 
+	de Vigenère.	
 
 Détails des fonctions :
 
@@ -26,3 +29,6 @@ void dechiffrerVigenere(char txt[], char cle[]);
 	- prend en entrée un texte codé et une clé pour permettre de décoder le texte (la même que celle qui a permis de coder le texte avant)
 	- pas de paramètres de sortie, on modifie directement le texte codé pour le transformer en texte en clair
 	- la présence de la clé adéquate est obligatoire pour pouvoir décoder le texte
+
+! Après dechiffrerCesar, le programme rajoute des carractères qui n'ont pas lieux d'être. On en a longtemps cherché la raison sans jamais la trouver. 
+  On a donc pris la décision de rendre le projet même ainsi afin de rendre tout de même un programme et répondre un maximum aux attentes. ! 
