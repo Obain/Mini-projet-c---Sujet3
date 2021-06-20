@@ -30,5 +30,75 @@ void dechiffrerVigenere(char txt[], char cle[]);
 	- pas de paramètres de sortie, on modifie directement le texte codé pour le transformer en texte en clair
 	- la présence de la clé adéquate est obligatoire pour pouvoir décoder le texte
 
-! Après dechiffrerCesar, le programme rajoute des carractères qui n'ont pas lieux d'être. On en a longtemps cherché la raison sans jamais la trouver. 
-  On a donc pris la décision de rendre le projet même ainsi afin de rendre tout de même un programme et répondre un maximum aux attentes. ! 
+ps : Avec César, il y a un problème de ségmentation. On en a longtemps cherché la raison sans jamais la trouver. 
+     On a donc pris la décision de rendre le projet même ainsi afin de rendre tout de même un programme et répondre un maximum aux attentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mettez une bonne note svp je veux avoir mon semestre
